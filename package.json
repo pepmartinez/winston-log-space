@@ -1,0 +1,36 @@
+{
+  "name": "winston-log-space",
+  "description": "per-module winston loggers",
+  "version": "0.0.1",
+  "keywords": [
+    "log",
+    "winston",
+    "module"
+  ],
+  "homepage": "https://github.com/pepmartinez/log-space",
+  "bugs": {
+    "url": "https://github.com/pepmartinez/log-space/issues",
+    "email": "pep.martinez@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pepmartinez/log-space.git"
+  },
+  "author": {
+    "name": "Jose Luis Martinez Juan",
+    "email": "pep.martinez@gmail.com"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "lodash": "4.17.10",
+    "winston": "3.0.0",
+    "cascade-config": "1.2.2"
+  },
+  "devDependencies": {
+    "mocha": "5.2.0",
+    "should": "13.2.1"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec --check-leaks --bail test/"
+  }
+}
