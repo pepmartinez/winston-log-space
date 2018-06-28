@@ -28,7 +28,6 @@ class WrapLogger {
     return false;
   }
 
-
   log (level, msg, ...splat) {
     if (!this._can_proceed (level)) return;
 
@@ -55,8 +54,7 @@ class WrapLogger {
 }
 
 
-
-
+//////////////////////////////////////////////////////////
 function _get_level (area) {
   var area_steps = area.split(':');
 
@@ -71,7 +69,12 @@ function _get_level (area) {
 
 
 //////////////////////////////////////////////////////////
-function init (cb) {
+function init (opts, cb) {
+  if (!cb) {
+    cb = opts;
+    opts = {};
+  }
+
   var cconf = new CC();
   var defaults = {
     level: {
@@ -80,22 +83,25 @@ function init (cb) {
   };
 
   cconf
-  .obj (defaults)
-  .file (__dirname + '/log.js',       {ignore_missing: true})
-  .file (__dirname + '/log-{env}.js', {ignore_missing: true})
-  .env ({prefix: 'LOG_'})
+  .obj  (defaults)
+  .obj  (opts)
+  .env  ({prefix: 'LOG_'})
+  .args ({prefix: 'log.'})
+  .file (process.cwd() + '/log.js',       {ignore_missing: true})
+  .file (process.cwd() + '/log-{env}.js', {ignore_missing: true})
+  .file ('{wlsconfig:none}',              {ignore_missing: true})
+  .env  ({prefix: 'LOG_'})
   .args ({prefix: 'log.'})
   .done (function (err, config) {
     if (err) return cb (err);
     _config = config;
-    
+
     _slave_logger = winston.createLogger({
       level: 'silly',
       format: config.format || (winston.format.combine(
         winston.format.colorize(),
         winston.format.timestamp(),
         winston.format.splat(),
-        winston.format.simple(),
         winston.format.printf(info => `${info.timestamp} [${info.area}] ${info.level}: ${info.message}`))),
       transports: config.transports || [new winston.transports.Console()]
     });
@@ -120,7 +126,9 @@ function logger (area) {
 }
 
 module.exports = {
-  init:       init,
-  logger:     logger
+  init:    init,
+  logger:  logger,
+  loggers: _loggers,
+  winston: _slave_logger
 };
 

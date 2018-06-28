@@ -1,20 +1,20 @@
 {
   "name": "winston-log-space",
-  "description": "per-module winston loggers",
-  "version": "0.0.1",
+  "description": "per-module wrapper over a winston v3 logger",
+  "version": "1.0.0",
   "keywords": [
     "log",
     "winston",
-    "module"
+    "module" 
   ],
-  "homepage": "https://github.com/pepmartinez/log-space",
+  "homepage": "https://github.com/pepmartinez/winston-log-space",
   "bugs": {
-    "url": "https://github.com/pepmartinez/log-space/issues",
+    "url": "https://github.com/pepmartinez/winston-log-space/issues",
     "email": "pep.martinez@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pepmartinez/log-space.git"
+    "url": "https://github.com/pepmartinez/winston-log-space.git"
   },
   "author": {
     "name": "Jose Luis Martinez Juan",
