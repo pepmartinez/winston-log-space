@@ -3,7 +3,7 @@ var CC =      require ('cascade-config');
 
 const { LEVEL, SPLAT } = require('triple-beam');
 
-var _config = {};
+var _config = null;
 var _slave_logger = null;
 var _loggers = {};
 
@@ -51,6 +51,25 @@ class WrapLogger {
       });
     }
   }
+}
+
+
+///////////////////////////////////////////////////
+class NullLogger {
+  constructor () {}
+
+  silly () {}
+  debug () {}
+  verbose () {}
+  info () {}
+  warn () {}
+  error () {}
+
+  emerg () {}
+  alert () {}
+  crit () {}
+  warning () {}
+  notice () {}
 }
 
 
@@ -113,6 +132,7 @@ function init (opts, cb) {
 
 //////////////////////////////////////////////////////////
 function logger (area) {
+  if (!_config)       return new NullLogger ();
   if (_loggers[area]) return _loggers[area];
 
   var lvl = _get_level (area);
