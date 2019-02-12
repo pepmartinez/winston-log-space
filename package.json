@@ -1,11 +1,11 @@
 {
   "name": "winston-log-space",
   "description": "per-module wrapper over a winston v3 logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "keywords": [
     "log",
     "winston",
-    "module" 
+    "module"
   ],
   "homepage": "https://github.com/pepmartinez/winston-log-space",
   "bugs": {
@@ -22,13 +22,13 @@
   },
   "license": "GPL-3.0",
   "dependencies": {
-    "lodash": "4.17.10",
-    "winston": "3.0.0",
-    "cascade-config": "1.2.2"
+    "lodash": "~4.17.11",
+    "winston": "~3.2.0",
+    "cascade-config": "~1.4.1"
   },
   "devDependencies": {
-    "mocha": "5.2.0",
-    "should": "13.2.1"
+    "mocha": "~5.2.0",
+    "should": "~13.2.1"
   },
   "scripts": {
     "test": "mocha --reporter spec --check-leaks --bail test/"
