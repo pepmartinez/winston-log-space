@@ -1,7 +1,7 @@
 {
   "name": "winston-log-space",
   "description": "per-module wrapper over a winston v3 logger",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "log",
     "winston",
@@ -22,9 +22,9 @@
   },
   "license": "GPL-3.0",
   "dependencies": {
-    "lodash": "~4.17.11",
+    "lodash": "~4.17.14",
     "winston": "~3.2.0",
-    "cascade-config": "~1.4.1"
+    "cascade-config": "~1.4.5"
   },
   "devDependencies": {
     "mocha": "~5.2.0",
