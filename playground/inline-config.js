@@ -4,7 +4,8 @@ var winston = require ('winston');
 
 var config = {
   level: {
-    s1: 'silly'
+    s1: 'silly',
+    's2:s3': 'verbose'
   },
   format: winston.format.combine(
     winston.format.timestamp(),

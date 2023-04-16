@@ -1,7 +1,7 @@
 {
   "name": "winston-log-space",
   "description": "per-module wrapper over a winston v3 logger",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "keywords": [
     "log",
     "winston",
@@ -20,7 +20,7 @@
     "name": "Jose Luis Martinez Juan",
     "email": "pep.martinez@gmail.com"
   },
-  "license": "GPL-3.0",
+  "license": "MIT",
   "dependencies": {
     "cascade-config": "~1.5.6",
     "lodash": "~4.17.21",
